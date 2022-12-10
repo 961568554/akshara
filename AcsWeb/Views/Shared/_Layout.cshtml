@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>@ViewBag.Title - Akshara Chit Solution</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+         }
+
+
+       .navbar-collapse ul li{
+           color: red;
+            margin: 2px;
+            padding: 2px;
+                             }
+
+             .navbar-collapse ul li:hover {
+                background: orange;
+                border-radius: 10px;
+            }
+
+        .row{
+            float:left;
+            display:flex;
+          box-sizing:border-box;
+          
+            }
+
+        .col-md-4 {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+        }
+        p {
+            font-family: "Times New Roman", Times, serif;
+            font-size:20px;
+            margin:10px;
+          
+        }
+        .text {
+            font-family: "Times New Roman", Times, serif;
+            font-size:15px;
+             }
+        .row img:hover {
+            transform: scale(0.8) rotate(-15deg);
+            border-radius: 2px;
+            box-shadow: 0 32px rgba(38,97,136,0.2);
+            margin-top:10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <img src="~/Content/Img/aksharalogo.png" style="width:50px;height:50px">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Akshara Chit Fund", "Index", "Home", null, new { @class = "navbar-brand text-warning" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-dark">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+             <p>&copy; @DateTime.Now.Year - Akshara Group</p>
+             <p>Akshara Group Corporate Office<br /> #1-8-571,Near Water Tank,Balasamudram,Nakkalaguta,<br />Hanamkonda,Dist. Warangal(U),Telangana,India,506001.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
